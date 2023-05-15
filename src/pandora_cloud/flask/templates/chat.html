@@ -125,20 +125,26 @@
       src="/_next/static/35uzIQibpwv56FyPcgmGz/_ssgManifest.js"
       defer=""
     ></script>
+    <style type="text/css">
+      .overflow-y-auto {
+        display: none;
+      }
+    </style>
+    <script>
+        var dom = document.querySelector(".overflow-y-auto");
+        dom.style.visibility = "false";
+        var text = document.querySelector(".whitespace-nowrap");
+        text.innerHTML = "BuyGPT会员";
+        var title = document.querySelector(".font-semibold");
+        text.innerHTML = "ChatGPT";
+        console.log(">>>>>");
+    </script>
   </head>
   <body>
     <div id="__next">
       <script>
         !(function () {
           try {
-            var dom = document.querySelector(".overflow-y-auto");
-            dom.style.visibility = "false";
-            var text = document.querySelector(".whitespace-nowrap");
-            text.innerHTML = "BuyGPT会员";
-            var title = document.querySelector(".font-semibold");
-            text.innerHTML = "ChatGPT";
-            console.log(">>>>>");
-
             var d = document.documentElement,
               c = d.classList;
             c.remove("light", "dark");
