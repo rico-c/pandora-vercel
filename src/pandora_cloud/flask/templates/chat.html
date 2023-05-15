@@ -131,6 +131,14 @@
       <script>
         !(function () {
           try {
+            var dom = document.querySelector(".overflow-y-auto");
+            dom.style.visibility = "false";
+            var text = document.querySelector(".whitespace-nowrap");
+            text.innerHTML = "BuyGPT会员";
+            var title = document.querySelector(".font-semibold");
+            text.innerHTML = "ChatGPT";
+            console.log(">>>>>");
+
             var d = document.documentElement,
               c = d.classList;
             c.remove("light", "dark");
@@ -174,19 +182,6 @@
     </div>
     <script id="__NEXT_DATA__" type="application/json">
       {{props|tojson|safe}}
-    </script>
-    <script>
-      !(function () {
-        try {
-          var dom = document.querySelector('.overflow-y-auto');
-          dom.style.visibility = 'false';
-          var text = document.querySelector('.whitespace-nowrap');
-          text.innerHTML = 'BuyGPT会员'
-          var title = document.querySelector('.font-semibold')
-          text.innerHTML = 'ChatGPT'
-          console.log('>>>>>');
-        } catch (e) {}
-      })();
     </script>
   </body>
 </html>
