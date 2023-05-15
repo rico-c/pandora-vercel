@@ -22,8 +22,9 @@ class ChatBot:
         self.sentry = sentry
         self.login_local = getenv('LOGIN_LOCAL',False)
         self.log_level = logging.DEBUG if debug else logging.WARN
-        self.api_prefix = getenv('CHATGPT_API_PREFIX',
-                                 'https://ai.fakeopen.com')
+        # self.api_prefix = ('CHATGPT_API_PREFIX',getenv
+        #                          'https://ai.fakeopen.com')
+        self.api_prefix = 'https://pandora-vercel-lyart.vercel.app'
 
     @staticmethod
     def after_request(resp):
