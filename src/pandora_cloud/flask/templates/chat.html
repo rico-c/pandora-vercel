@@ -132,6 +132,15 @@
       .text-yellow-900 {
         display: none;
       }
+      .animate-flash {
+        display: none;
+      }
+      .whitespace-nowrap {
+        visibility: hidden;
+      }
+      .whitespace-nowrap::after {
+        content: 'BuyGPT会员'
+      }
     </style>
     <script>
       var dom = document.querySelector(".overflow-y-auto");
