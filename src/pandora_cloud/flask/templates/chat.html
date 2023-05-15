@@ -127,17 +127,20 @@
     ></script>
     <style type="text/css">
       .overflow-y-auto {
+        visibility: hidden;
+      }
+      .text-yellow-900 {
         display: none;
       }
     </style>
     <script>
-        var dom = document.querySelector(".overflow-y-auto");
-        dom.style.visibility = "false";
-        var text = document.querySelector(".whitespace-nowrap");
-        text.innerHTML = "BuyGPT会员";
-        var title = document.querySelector(".font-semibold");
-        text.innerHTML = "ChatGPT";
-        console.log(">>>>>");
+      var dom = document.querySelector(".overflow-y-auto");
+      dom.style.visibility = "false";
+      var text = document.querySelector(".whitespace-nowrap");
+      text.innerHTML = "BuyGPT会员";
+      var title = document.querySelector(".font-semibold");
+      text.innerHTML = "ChatGPT";
+      console.log(">>>>>");
     </script>
   </head>
   <body>
