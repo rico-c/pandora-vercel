@@ -903,19 +903,17 @@
         // });
 
         //  load
-        setTimeout(() => {
-          const loginBtn = document.querySelector(".member_login");
-          loginBtn.addEventListener("click", () => {
-            const email = document.querySelector(".member_email").value;
-            const password = document.querySelector(".member_password").value;
-            console.log(">>>email", email, password);
-            fetch(
-              `https://www.buygpt.com/api/login?email=${email}&password=${password}`
-            ).then((res) => {
-              console.log(res.json());
-            });
+        const loginBtn = document.querySelector(".member_login");
+        loginBtn.addEventListener("click", () => {
+          const email = document.querySelector(".member_email").value;
+          const password = document.querySelector(".member_password").value;
+          console.log(">>>email", email, password);
+          fetch(
+            `https://www.buygpt.com/api/login?email=${email}&password=${password}`
+          ).then((res) => {
+            console.log(res.json());
           });
-        }, 500);
+        });
       });
     </script>
   </body>
