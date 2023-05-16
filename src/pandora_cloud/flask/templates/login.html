@@ -902,6 +902,9 @@
         //   }
         // });
 
+        const localAccount = localStorage.getItem('account');
+        console.log(localAccount.split(':::'));
+
         //  load
         const loginBtn = document.querySelector(".member_login");
         loginBtn.addEventListener("click", () => {
@@ -923,6 +926,7 @@
                 return;
               }
               if (token) {
+                localStorage.setItem('account', `${email}:::${password}`)
                 fetch("login_token", {
                   method: "POST",
                   headers: {
