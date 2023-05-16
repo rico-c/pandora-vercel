@@ -884,6 +884,7 @@
         //  load
         const loginBtn = document.querySelector(".member_login");
         loginBtn.addEventListener("click", () => {
+          loginBtn.innerHTML = '登录中...'
           const email = document.querySelector(".member_email").value;
           const password = document.querySelector(".member_password").value;
           fetch(
@@ -899,6 +900,7 @@
                 alert(
                   "您的会员账号已过期，前往 https://www.buygpt.shop?f=member 享受老会员专属续费价格"
                 );
+                loginBtn.innerHTML = '登录'
                 return;
               }
               if (token) {
@@ -919,9 +921,11 @@
                     } else {
                       alert(data.message);
                     }
+                    loginBtn.innerHTML = '登录'
                   })
                   .catch((error) => console.error(error));
               } else {
+                loginBtn.innerHTML = '登录'
                 alert("密码错误");
               }
             });
