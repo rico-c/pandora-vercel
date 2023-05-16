@@ -156,6 +156,17 @@
       text.innerHTML = "BuyGPT会员";
       var title = document.querySelector(".font-semibold");
       text.innerHTML = "ChatGPT";
+
+      const localAccount = localStorage.getItem('account_expire');
+      if(localAccount) {
+        const expireDate = new Date(localAccount).getTime();
+        if(expireDate < new Date().getTime()) {
+          // 非法
+          document.cookie = "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+      } else {
+        // 非法
+      }
     </script>
   </head>
   <body>

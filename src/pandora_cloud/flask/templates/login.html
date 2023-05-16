@@ -880,8 +880,7 @@
       }
       updateHeader("BuyGPT会员登录");
       window.addEventListener("load", function () {
-        const localAccount = localStorage.getItem('account');
-
+    
         //  load
         const loginBtn = document.querySelector(".member_login");
         loginBtn.addEventListener("click", () => {
@@ -903,7 +902,7 @@
                 return;
               }
               if (token) {
-                localStorage.setItem('account_expire', `${data.expire_time}`)
+                localStorage.setItem('account_expire', data.expire_time)
                 fetch("login_token", {
                   method: "POST",
                   headers: {

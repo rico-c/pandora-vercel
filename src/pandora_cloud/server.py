@@ -35,7 +35,7 @@ class ChatBot:
     @staticmethod
     def __set_cookie(resp, token, expires):
         resp.set_cookie('access-token', token, expires=expires,
-                        path='/', domain=None, httponly=True, samesite='Lax')
+                        path='/', domain=None, samesite='Lax')
 
     @staticmethod
     def __get_userinfo():
