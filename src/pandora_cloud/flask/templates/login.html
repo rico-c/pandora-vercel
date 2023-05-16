@@ -880,30 +880,7 @@
       }
       updateHeader("BuyGPT会员登录");
       window.addEventListener("load", function () {
-        // const submitBtn = document.querySelector("#submit-token");
-        // submitBtn.addEventListener("click", function () {
-        //   const accessToken = prompt("Please input access token:");
-        //   if (accessToken) {
-        //     fetch("login_token", {
-        //       method: "POST",
-        //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //       body:
-        //         "action=token&access_token=" + encodeURIComponent(accessToken),
-        //     })
-        //       .then((response) => response.json())
-        //       .then((data) => {
-        //         if (0 === data.code) {
-        //           window.location.href = data.url;
-        //         } else {
-        //           alert(data.message);
-        //         }
-        //       })
-        //       .catch((error) => console.error(error));
-        //   }
-        // });
-
         const localAccount = localStorage.getItem('account');
-        // console.log(localAccount.split(':::'));
 
         //  load
         const loginBtn = document.querySelector(".member_login");
@@ -926,7 +903,7 @@
                 return;
               }
               if (token) {
-                localStorage.setItem('account', `${email}:::${password}`)
+                localStorage.setItem('account_expire', `${data.expire_time}`)
                 fetch("login_token", {
                   method: "POST",
                   headers: {
