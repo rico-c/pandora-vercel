@@ -142,34 +142,40 @@
         visibility: hidden;
       }
       .whitespace-nowrap::before {
-        content: 'BuyGPT会员';
+        content: "BuyGPT会员";
         visibility: visible;
       }
-      a[href='https://github.com/pengzhile/pandora'] {
+      a[href='https://github.com/pengzhile/pandora']
+      {
         display: none;
       }
     </style>
     <script>
-      var dom = document.querySelector(".overflow-y-auto");
-      dom.style.visibility = "false";
-      var text = document.querySelector(".whitespace-nowrap");
-      text.innerHTML = "BuyGPT会员";
-      var title = document.querySelector(".font-semibold");
-      text.innerHTML = "ChatGPT";
+      // var dom = document.querySelector(".overflow-y-auto");
+      // dom.style.visibility = "false";
+      window.addEventListener("load", function () {
+        var text = document.querySelector(".whitespace-nowrap");
+        text.innerHTML = "BuyGPT会员";
+        var title = document.querySelector(".font-semibold");
+        text.innerHTML = "ChatGPT";
 
-      const localAccount = localStorage.getItem('account_expire');
-      if(localAccount) {
-        const expireDate = new Date(localAccount).getTime();
-        if(expireDate < new Date().getTime()) {
+        const localAccount = localStorage.getItem("account_expire");
+        console.log('>>>>', localAccount);
+        if (localAccount) {
+          const expireDate = new Date(localAccount).getTime();
+          if (expireDate < new Date().getTime()) {
+            // 非法
+            document.cookie =
+              "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.location.reload();
+          }
+        } else {
           // 非法
-          document.cookie = "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-          document.location.reload()
+          document.cookie =
+            "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.location.reload();
         }
-      } else {
-        // 非法
-        document.cookie = "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.location.reload()
-      }
+      });
     </script>
   </head>
   <body>
