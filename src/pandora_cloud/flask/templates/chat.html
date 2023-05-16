@@ -163,9 +163,12 @@
         if(expireDate < new Date().getTime()) {
           // 非法
           document.cookie = "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.location.reload()
         }
       } else {
         // 非法
+        document.cookie = "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.location.reload()
       }
     </script>
   </head>
