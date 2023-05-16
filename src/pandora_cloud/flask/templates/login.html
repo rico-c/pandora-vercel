@@ -909,7 +909,10 @@
           const password = document.querySelector(".member_password").value;
           console.log(">>>email", email, password);
           fetch(
-            `https://www.buygpt.com/api/login?email=${email}&password=${password}`
+            `https://www.buygpt.com/api/login?email=${email}&password=${password}`,
+            {
+              method: "GET"
+            }
           ).then((res) => {
             console.log(res.json());
           });
