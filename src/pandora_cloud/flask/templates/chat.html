@@ -170,6 +170,7 @@
             // 非法
             document.cookie =
               "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            localStorage.clear()
             document.location.reload();
           }
         } else {
@@ -177,6 +178,7 @@
           document.cookie =
             "access-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           document.location.reload();
+          localStorage.clear()
         }
       });
     </script>
