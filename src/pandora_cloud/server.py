@@ -24,7 +24,7 @@ class ChatBot:
         self.log_level = logging.DEBUG if debug else logging.WARN
         # self.api_prefix = ('CHATGPT_API_PREFIX',getenv
         #                          'https://ai.fakeopen.com')
-        self.api_prefix = 'https://chat1.buygpt.top/'
+        self.api_prefix = 'https://chat1.buygpt.top'
 
     @staticmethod
     def after_request(resp):
