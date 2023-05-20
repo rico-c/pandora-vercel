@@ -10,7 +10,7 @@ from pandora.exts.token import check_access_token
 from pandora.openai.auth import Auth0
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-__version__ = '0.1.0'
+__version__ = '0.2.1'
 
 
 class ChatBot:
@@ -20,7 +20,7 @@ class ChatBot:
         self.proxy = proxy
         self.debug = debug
         self.sentry = sentry
-        self.login_local = getenv('LOGIN_LOCAL',False)
+        self.login_local = getenv('LOGIN_LOCAL',True)
         self.log_level = logging.DEBUG if debug else logging.WARN
         # self.api_prefix = ('CHATGPT_API_PREFIX',getenv
         #                          'https://ai.fakeopen.com')
@@ -222,7 +222,6 @@ class ChatBot:
                 'message_style_202305',
                 'layout_may_2023',
                 'plugins_available',
-                'new_model_switcher_20230512',
                 'beta_features',
                 'infinite_scroll_history',
                 'browsing_available',
